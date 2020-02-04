@@ -1,0 +1,39 @@
+<script type="text/javascript">
+var google_tag_params = {
+{% if template contains 'index' %}
+	ecomm_pagetype: 'home',
+{% elsif template contains 'search' %}
+	ecomm_pagetype: 'searchresults'	,
+{% elsif template contains 'collection' %}
+	ecomm_pagetype: 'category',
+{% elsif template contains 'product' %}
+  ecomm_prodid: '{{ product.id }}',
+  ecomm_pagetype: 'product',
+  ecomm_totalvalue: {{ product.price }}
+{% elsif template contains 'cart' %}
+  ecomm_pagetype: 'cart',
+  ecomm_totalvalue: {{ cart.subtotal_price }}
+{% elsif template contains 'customer' or template contains 'confirm' or template contains 'thankyou' or template contains 'payment' %}
+  ecomm_pagetype: 'purchase',
+  ecomm_totalvalue: {{ cart.subtotal_price }}
+{% else %}
+  ecomm_pagetype: 'other',
+{% endif %}
+};
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+try {
+  var google_conversion_id = {{ integration['conversion_id'] }};
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+} catch(e) {}
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/{{ integration['conversion_id'] }}/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
