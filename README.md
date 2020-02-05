@@ -1,5 +1,5 @@
 [<img src="versacommerce.png" width="250px" align="right" alt="VersaCommerce.de">](https://www.versacommerce.de/?utm_source=github)
-[<img src="google.png" width="90px" align="right" alt="support.google.com">](https://support.google.com/google-ads/answer/2476688?hl=en/?utm_source=www.versacommerce.de)
+[<img src="google.png" width="70px" align="right" alt="support.google.com">](https://support.google.com/google-ads/answer/2476688?hl=en/?utm_source=www.versacommerce.de)
 
 # Google Remarketing Tag Integration for VersaCommerce
 
